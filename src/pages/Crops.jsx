@@ -13,6 +13,7 @@ import {
 } from "firebase/firestore"
 import DeleteIcon from "../assets/svg/deleteIcon.svg?react"
 import EditIcon from "../assets/svg/editIcon.svg?react"
+import Logo from "../assets/svg/logo.svg"
 
 const Crops = () => {
   const [cropList, setCropList] = useState([])
@@ -65,84 +66,99 @@ const Crops = () => {
   }
   const updateCrop = async (id) => {
     const cropDoc = doc(db, "crops", id)
-    await updateDoc(cropDoc, { 
-      avgSize: updatedSize, 
-      number: updatedNumber, 
-      type: updatedType 
+    await updateDoc(cropDoc, {
+      avgSize: updatedSize,
+      number: updatedNumber,
+      type: updatedType,
     })
     getCropList()
   }
 
   return (
-    <div className="flex">
-      <Sidebar />
-      <div className="container mx-auto py-4">
-        <div className="flex items-center space-x-4">
-          <input
-            className="p-2 border border-gray-300 rounded"
-            placeholder="Crop type"
-            onChange={(e) => setNewCropType(e.target.value)}
-          />
-          <input
-            className="p-2 border border-gray-300 rounded"
-            placeholder="Number"
-            type="text"
-            onChange={(e) => setNewCropNumber(e.target.value)}
-          />
-          <button
-            className="p-2 bg-green-700 text-white rounded hover:bg-green-700"
-            onClick={onSubmitCrop}
-          >
-            Add Crop
-          </button>
-        </div>
-        <div className="mt-2">
-          <table className="w-full border-collapse border border-gray-300">
-            <thead>
-              <tr className="bg-gray-200">
-                <th className="p-0.5 border border-gray-300 w-1/3">Type</th>
-                <th className="p-0.5 border border-gray-300 w-1/3">Number</th>
-                <th className="p-0.5 border border-gray-300 w-1/3">Average Size</th>
-                <th className="p-0.5 border border-gray-300 w-1/3">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {cropList.map((crop) => (
-                <tr key={crop.id}>
-                  <td className="p-0.5 border border-gray-300">{crop.type}</td>
-                  <td className="p-0.5 border border-gray-300">{crop.number}</td>
-                  <td className="p-0.5 border border-gray-300">{crop.avgSize}</td>
-                  <td className="p-0.5 border border-gray-300 flex space-x-2">
-                    <div onClick={() => deleteCrop(crop.id)}>
-                      <DeleteIcon width={20} height={20} />
-                    </div>
-                    <div onClick={(e) => updateCrop(crop.id)}>
-                      <EditIcon fill="#ffffff" width={20} height={20} />
-                    </div>
-                    <input
-                      className="p-0.5 border border-gray-300 rounded"
-                      placeholder="New Size"
-                      onChange={(e) => setUpdatedSize(e.target.value)}
-                    />
-                    <input
-                      className="p-0.5 border border-gray-300 rounded"
-                      placeholder="New Number"
-                      onChange={(e) => setUpdatedNumber(e.target.value)}
-                    />
-                    <input
-                      className="p-0.5 border border-gray-300 rounded"
-                      placeholder="New Type"
-                      onChange={(e) => setUpdatedType(e.target.value)}
-                    />
-                  </td>
+    <>
+      <div className="logo">
+        <img src={Logo} alt="Your Logo" width="500px" />
+      </div>
+      <div className="flex">
+        <Sidebar />
+        <div className="container mx-auto py-4">
+          <div className="flex items-center space-x-4">
+            <input
+              className="p-2 border border-gray-300 rounded"
+              placeholder="Crop type"
+              onChange={(e) => setNewCropType(e.target.value)}
+            />
+            <input
+              className="p-2 border border-gray-300 rounded"
+              placeholder="Number"
+              type="text"
+              onChange={(e) => setNewCropNumber(e.target.value)}
+            />
+            <button
+              className="p-2 bg-green-700 text-white rounded hover:bg-green-700"
+              onClick={onSubmitCrop}
+            >
+              Add Crop
+            </button>
+          </div>
+          <div className="mt-2">
+            <table className="w-full border-collapse border border-gray-300">
+              <thead>
+                <tr className="bg-gray-200">
+                  <th className="p-0.5 border border-gray-300 w-1/3">Type</th>
+                  <th className="p-0.5 border border-gray-300 w-1/3">Number</th>
+                  <th className="p-0.5 border border-gray-300 w-1/3">
+                    Average Size
+                  </th>
+                  <th className="p-0.5 border border-gray-300 w-1/3">
+                    Actions
+                  </th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {cropList.map((crop) => (
+                  <tr key={crop.id}>
+                    <td className="p-0.5 border border-gray-300">
+                      {crop.type}
+                    </td>
+                    <td className="p-0.5 border border-gray-300">
+                      {crop.number}
+                    </td>
+                    <td className="p-0.5 border border-gray-300">
+                      {crop.avgSize}
+                    </td>
+                    <td className="p-0.5 border border-gray-300 flex space-x-2">
+                      <div onClick={() => deleteCrop(crop.id)}>
+                        <DeleteIcon width={20} height={20} />
+                      </div>
+                      <div onClick={(e) => updateCrop(crop.id)}>
+                        <EditIcon fill="#ffffff" width={20} height={20} />
+                      </div>
+                      <input
+                        className="p-0.5 border border-gray-300 rounded"
+                        placeholder="New Size"
+                        onChange={(e) => setUpdatedSize(e.target.value)}
+                      />
+                      <input
+                        className="p-0.5 border border-gray-300 rounded"
+                        placeholder="New Number"
+                        onChange={(e) => setUpdatedNumber(e.target.value)}
+                      />
+                      <input
+                        className="p-0.5 border border-gray-300 rounded"
+                        placeholder="New Type"
+                        onChange={(e) => setUpdatedType(e.target.value)}
+                      />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    </>
+  )
 }
 
 export default Crops

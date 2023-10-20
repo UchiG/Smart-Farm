@@ -7,6 +7,7 @@ export const Auth = () => {
     const [password, setPassword] = useState("");
 
     console.log(auth?.currentUser?.email);
+    
 
     const signIn = async () => {
         try {

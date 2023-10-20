@@ -9,7 +9,7 @@ const LandingPage = () => {
       </div> */}
 
       <Landing />
-      <RightBar />
+      <RightBar className="right-bar"/>
     </div>
   )
 }

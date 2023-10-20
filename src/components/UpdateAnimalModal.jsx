@@ -3,6 +3,28 @@ import Modal from "react-modal";
 
 Modal.setAppElement("#root"); // Set the root element for the modal
 
+const modalStyle = {
+  content: {
+    width: "300px", // Adjust the width as needed
+    height: "auto", // Allow the modal to expand vertically as needed
+    margin: "auto", // Center the modal horizontally
+    padding: "20px", // Add some padding to the modal content
+  },
+};
+
+const labelStyle = {
+  fontWeight: "bold",
+  marginBottom: "5px",
+};
+
+const inputStyle = {
+  width: "100%",
+  padding: "0.5rem",
+  border: "1px solid #ccc",
+  borderRadius: "5px",
+  marginBottom: "10px",
+};
+
 const UpdateAnimalModal = ({
   isOpen,
   onRequestClose,
@@ -29,44 +51,54 @@ const UpdateAnimalModal = ({
   };
 
   return (
-    <Modal isOpen={isOpen} onRequestClose={onRequestClose} contentLabel="Update Animal">
+    <Modal
+      isOpen={isOpen}
+      onRequestClose={onRequestClose}
+      contentLabel="Update Animal"
+      style={modalStyle}
+    >
       <h2>Update Animal</h2>
       <div>
-        <label>Type:</label>
+        <label style={labelStyle}>Type:</label>
         <input
-          type="text"
+          style={inputStyle}
+          placeholder="New Type"
           value={updatedType}
           onChange={(e) => setUpdatedType(e.target.value)}
         />
       </div>
       <div>
-        <label>Color:</label>
+        <label style={labelStyle}>Color:</label>
         <input
-          type="text"
+          style={inputStyle}
+          placeholder="New Color"
           value={updatedColor}
           onChange={(e) => setUpdatedColor(e.target.value)}
         />
       </div>
       <div>
-        <label>Breed:</label>
+        <label style={labelStyle}>Breed:</label>
         <input
-          type="text"
+          style={inputStyle}
+          placeholder="New Breed"
           value={updatedBreed}
           onChange={(e) => setUpdatedBreed(e.target.value)}
         />
       </div>
       <div>
-        <label>Species:</label>
+        <label style={labelStyle}>Species:</label>
         <input
-          type="text"
+          style={inputStyle}
+          placeholder="New Species"
           value={updatedSpecies}
           onChange={(e) => setUpdatedSpecies(e.target.value)}
         />
       </div>
       <div>
-        <label>Age:</label>
+        <label style={labelStyle}>Age:</label>
         <input
-          type="text"
+          style={inputStyle}
+          placeholder="New Age"
           value={updatedAge}
           onChange={(e) => setUpdatedAge(e.target.value)}
         />

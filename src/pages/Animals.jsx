@@ -12,6 +12,7 @@ import Sidebar from "../components/Sidebar"
 import DeleteIcon from "../assets/svg/deleteIcon.svg?react"
 import EditIcon from "../assets/svg/editIcon.svg?react"
 import UpdateAnimalModal from "../components/UpdateAnimalModal" // Import the modal component
+import Logo from "../assets/svg/logo.svg"
 
 const Animals = () => {
   const [animalList, setAnimalList] = useState([])
@@ -25,8 +26,8 @@ const Animals = () => {
   const [updatedBreed, setUpdatedBreed] = useState("")
   const [updatedAge, setUpdatedAge] = useState("")
 
-  const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false); // State for modal visibility
-  const [selectedAnimal, setSelectedAnimal] = useState(""); // State to store the selected animal for updating
+  const [isUpdateModalOpen, setIsUpdateModalOpen] = useState(false) // State for modal visibility
+  const [selectedAnimal, setSelectedAnimal] = useState("") // State to store the selected animal for updating
 
   const animalsCollectionRef = collection(db, "animals")
 
@@ -68,127 +69,144 @@ const Animals = () => {
     getAnimalList()
   }
 
-  const updateAnimalSpecies = async (id) => {
+  const updateAnimal = async (id) => {
     const animalDoc = doc(db, "animals", id)
-    await updateDoc(animalDoc, { 
+    await updateDoc(animalDoc, {
       type: updatedType,
       color: updatedColor,
       species: updatedSpecies,
       breed: updatedBreed,
-      age: updatedAge
-     })
+      age: updatedAge,
+    })
     getAnimalList()
   }
 
   const openUpdateModal = (animal) => {
-    setSelectedAnimal(animal);
-    setIsUpdateModalOpen(true);
-  };
+    setSelectedAnimal(animal)
+    setIsUpdateModalOpen(true)
+  }
 
   return (
-    <div className="flex">
-      <Sidebar />
-      <div className="container mx-auto py-4">
-        <div className="flex items-center space-x-4">
-          <input
-            className="p-2 border border-gray-300 rounded"
-            value={newAnimalType}
-            placeholder="Animal type"
-            onChange={(e) => setNewAnimalType(e.target.value)}
-          />
-          <input
-            className="p-2 border border-gray-300 rounded"
-            type="text"
-            value={newAnimalColor}
-            placeholder="Color"
-            onChange={(e) => setNewAnimalColor(e.target.value)}
-          />
-          <button
-            className="p-2 bg-green-700 text-white rounded hover:bg-green-700"
-            onClick={() => {
-              onSubmitAnimal()
-              setNewAnimalColor("")
-              setNewAnimalType("")
-            }}
-          >
-            Add Animal
-          </button>
-        </div>
-        <div className="mt-2">
-          <table className="w-full border-collapse border border-gray-300">
-            <thead>
-              <tr className="bg-gray-200">
-                <th className="p-0.5 border border-gray-300 w-1/6">Type</th>
-                <th className="p-0.5 border border-gray-300 w-1/6">Color</th>
-                <th className="p-0.5 border border-gray-300 w-1/6">Breed</th>
-                <th className="p-0.5 border border-gray-300 w-1/6">Species</th>
-                <th className="p-0.5 border border-gray-300 w-1/6">Age</th>
-                <th className="p-0.5 border border-gray-300 w-1/6">Actions</th>+
-              </tr>
-            </thead>
-            <tbody>
-              {animalList.map((animal) => (
-                <tr key={animal.id}>
-                  <td className="p-0.5 border border-gray-300">
-                    {animal.type}
-                  </td>
-                  <td className="p-0.5 border border-gray-300">
-                    {animal.color}
-                  </td>
-                  <td className="p-0.5 border border-gray-300">
-                    {animal.breed}
-                  </td>
-                  <td className="p-0.5 border border-gray-300">
-                    {animal.species}
-                  </td>
-                  <td className="p-0.5 border border-gray-300">{animal.age}</td>
-                  <td className="p-0.5 border border-gray-300 flex space-x-2">
-                    <div onClick={() => deleteAnimal(animal.id)}>
-                      <DeleteIcon fill="#ffffff" width="20px" height="20px" />
-                    </div>
-                    <div onClick={(e) => {updateAnimalSpecies(animal.id); openUpdateModal(animal)}}>
-                      <EditIcon fill="#ffffff" width="20px" height="20px" />
-                    </div>
-                    <input
-                      className="p-0.5 border border-gray-300 rounded"
-                      placeholder="New Type"
-                      onChange={(e) => setUpdatedType(e.target.value)}
-                    />
-                    <input
-                      className="p-0.5 border border-gray-300 rounded"
-                      placeholder="New Color"
-                      onChange={(e) => setUpdatedColor(e.target.value)}
-                    />
-                    <input
-                      className="p-0.5 border border-gray-300 rounded"
-                      placeholder="New Species"
-                      onChange={(e) => setUpdatedSpecies(e.target.value)}
-                    />
-                    <input
-                      className="p-0.5 border border-gray-300 rounded"
-                      placeholder="New Breed"
-                      onChange={(e) => setUpdatedBreed(e.target.value)}
-                    />
-                    <input
-                      className="p-0.5 border border-gray-300 rounded"
-                      placeholder="New Age"
-                      onChange={(e) => setUpdatedAge(e.target.value)}
-                    />
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-
-        <UpdateAnimalModal
-          isOpen={isUpdateModalOpen}
-          onRequestClose={() => setIsUpdateModalOpen(false)}
-          onUpdateAnimal={updateAnimalSpecies}
-          initialData={selectedAnimal}
-        />
+    <>
+      <div className="logo">
+        <img src={Logo} alt="Your Logo" width="500px" />
       </div>
-    </div>
+      <div className="flex">
+        <Sidebar />
+        <div className="container mx-auto py-4">
+          <div className="flex items-center space-x-4">
+            <input
+              className="p-2 border border-gray-300 rounded"
+              value={newAnimalType}
+              placeholder="Animal type"
+              onChange={(e) => setNewAnimalType(e.target.value)}
+            />
+            <input
+              className="p-2 border border-gray-300 rounded"
+              type="text"
+              value={newAnimalColor}
+              placeholder="Color"
+              onChange={(e) => setNewAnimalColor(e.target.value)}
+            />
+            <button
+              className="p-2 bg-green-700 text-white rounded hover:bg-green-700"
+              onClick={() => {
+                onSubmitAnimal()
+                setNewAnimalColor("")
+                setNewAnimalType("")
+              }}
+            >
+              Add Animal
+            </button>
+          </div>
+          <div className="mt-2">
+            <table className="w-full border-collapse border border-gray-300">
+              <thead>
+                <tr className="bg-gray-200">
+                  <th className="p-0.5 border border-gray-300 w-1/6">Type</th>
+                  <th className="p-0.5 border border-gray-300 w-1/6">Color</th>
+                  <th className="p-0.5 border border-gray-300 w-1/6">Breed</th>
+                  <th className="p-0.5 border border-gray-300 w-1/6">
+                    Species
+                  </th>
+                  <th className="p-0.5 border border-gray-300 w-1/6">Age</th>
+                  <th className="p-0.5 border border-gray-300 w-1/6">
+                    Actions
+                  </th>
+                  +
+                </tr>
+              </thead>
+              <tbody>
+                {animalList.map((animal) => (
+                  <tr key={animal.id}>
+                    <td className="p-0.5 border border-gray-300">
+                      {animal.type}
+                    </td>
+                    <td className="p-0.5 border border-gray-300">
+                      {animal.color}
+                    </td>
+                    <td className="p-0.5 border border-gray-300">
+                      {animal.breed}
+                    </td>
+                    <td className="p-0.5 border border-gray-300">
+                      {animal.species}
+                    </td>
+                    <td className="p-0.5 border border-gray-300">
+                      {animal.age}
+                    </td>
+                    <td className="p-0.5 border border-gray-300 flex space-x-2">
+                      <div onClick={() => deleteAnimal(animal.id)}>
+                        <DeleteIcon fill="#ffffff" width="20px" height="20px" />
+                      </div>
+                      <div
+                        onClick={(e) => {
+                          updateAnimal(animal.id)
+                          openUpdateModal(animal)
+                        }}
+                      >
+                        <EditIcon fill="#ffffff" width="20px" height="20px" />
+                      </div>
+                      <input
+                        className="p-0.5 border border-gray-300 rounded"
+                        placeholder="New Type"
+                        onChange={(e) => setUpdatedType(e.target.value)}
+                      />
+                      <input
+                        className="p-0.5 border border-gray-300 rounded"
+                        placeholder="New Color"
+                        onChange={(e) => setUpdatedColor(e.target.value)}
+                      />
+                      <input
+                        className="p-0.5 border border-gray-300 rounded"
+                        placeholder="New Species"
+                        onChange={(e) => setUpdatedSpecies(e.target.value)}
+                      />
+                      <input
+                        className="p-0.5 border border-gray-300 rounded"
+                        placeholder="New Breed"
+                        onChange={(e) => setUpdatedBreed(e.target.value)}
+                      />
+                      <input
+                        className="p-0.5 border border-gray-300 rounded"
+                        placeholder="New Age"
+                        onChange={(e) => setUpdatedAge(e.target.value)}
+                      />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <UpdateAnimalModal
+            isOpen={isUpdateModalOpen}
+            onRequestClose={() => setIsUpdateModalOpen(false)}
+            onUpdateAnimal={updateAnimal}
+            initialData={selectedAnimal}
+          />
+        </div>
+      </div>
+    </>
   )
 }
 

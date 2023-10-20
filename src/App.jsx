@@ -32,9 +32,9 @@ function App() {
 
   return (
     <>
-        <div className="logo">
+        {/* <div className="logo">
           <img src={Logo} alt="Your Logo" width="500px" />
-        </div>
+        </div> */}
 
       {/* <Router> */}
       <Routes>
