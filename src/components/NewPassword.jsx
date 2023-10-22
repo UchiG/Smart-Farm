@@ -1,6 +1,11 @@
 import { useState } from "react"
 import { getAuth, updatePassword } from "firebase/auth"
 import Sidebar from "../components/Sidebar"
+import Logo from "../assets/svg/logo.svg"
+import Settings from "../components/Settings"
+
+
+
 
 const NewPassword = () => {
   const [currentPassword, setCurrentPassword] = useState("")
@@ -29,6 +34,12 @@ const NewPassword = () => {
   }
 
   return (
+    <>
+      <div className="logo">
+        <img src={Logo} alt="Your Logo" width="500px" />
+      </div>
+      <Settings />
+
     <div className="flex">
       <Sidebar />
       
@@ -85,6 +96,7 @@ const NewPassword = () => {
         </button>
       </div>
     </div>
+    </>
   )
 }
 

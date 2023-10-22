@@ -1,16 +1,11 @@
 import { Link, useLocation } from "react-router-dom"
-import Sidebar from "../components/Sidebar"
-import Logo from "../assets/svg/logo.svg"
+import Sidebar from "./Sidebar"
 
 const Settings = () => {
   const location = useLocation()
 
   return (
     <>
-      <div className="logo">
-        <img src={Logo} alt="Your Logo" width="500px" />
-      </div>
-
       <div className="flex">
         <Sidebar />
         <div className="container mx-auto py-4">
@@ -31,7 +26,7 @@ const Settings = () => {
             <Link
               to="/settings/new-password"
               className={`${
-                location.pathname === "/settings/password"
+                location.pathname === "/settings/new-password"
                   ? "text-green-500"
                   : "text-black"
               }`}

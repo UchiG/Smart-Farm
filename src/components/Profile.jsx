@@ -1,5 +1,8 @@
 import { useState } from "react"
 import Sidebar from "../components/Sidebar"
+import Logo from "../assets/svg/logo.svg"
+import Settings from "../components/Settings"
+
 
 function Profile() {
   // Define state variables for each input field
@@ -41,6 +44,11 @@ function Profile() {
   }
 
   return (
+    <>
+    <div className="logo">
+      <img src={Logo} alt="Your Logo" width="500px" />
+    </div>
+    <Settings />
     <div className="flex">
       <Sidebar />
       <div className="container mx-auto p-4">
@@ -125,6 +133,7 @@ function Profile() {
         </form>
       </div>
     </div>
+    </>
   )
 }
 
