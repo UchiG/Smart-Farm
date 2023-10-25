@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 import { db, auth } from "../config/firebase"
 import { Auth } from "../components/auth"
 import Sidebar from "../components/Sidebar"
@@ -6,25 +7,25 @@ import {
   getDocs,
   collection,
   addDoc,
-  deleteDoc,
-  doc,
-  updateDoc,
 } from "firebase/firestore"
 
 const AddInventory = () => {
+
+  const navigate = useNavigate();
+
   const [machineList, setMachineList] = useState([])
 
   const [newMachineType, setNewMachineType] = useState("")
   const [newMachineCost, setNewMachineCost] = useState("")
-  const [newMachineNumber, setNewMachineNumber] = useState("")
+  const [newMachineQuantity, setNewMachineQuantity] = useState("")
 
   const [newLastMaintenanceDate, setNewLastMaintenanceDate] = useState("")
+
   // const [newPurchaseDate, setNewPurchaseDate] = useState("")
   // const [newMaintenanceSchedule, setNewMaintenanceSchedule] = useState("")
   // const [newCondition, setNewCondition] = useState("")
   // const [newWarrantyEndDate, setNewWarrantyEndDate] = useState("")
 
-  const [updatedNumber, setUpdatedNumber] = useState("")
 
   const inventoryCollectionRef = collection(db, "inventory")
 
@@ -51,30 +52,20 @@ const AddInventory = () => {
       await addDoc(inventoryCollectionRef, {
         machineType: newMachineType,
         costPerMachine: newMachineCost,
-        number: newMachineNumber,
+        quantity: newMachineQuantity,
         userId: auth?.currentUser?.uid,
       })
       // Clear input fields
       setNewMachineType("")
       setNewMachineCost("")
-      setNewMachineNumber("")
+      setNewMachineQuantity("")
       getMachineList()
+      navigate("/inventory")
     } catch (error) {
       console.error(error)
     }
   }
 
-  const deleteMachine = async (id) => {
-    const machineDoc = doc(db, "inventory", id)
-    await deleteDoc(machineDoc)
-    getMachineList()
-  }
-
-  const updateMachineNumber = async (id) => {
-    const machineDoc = doc(db, "inventory", id)
-    await updateDoc(machineDoc, { number: updatedNumber })
-    getMachineList()
-  }
 
   return (
     <div className="flex">
@@ -102,10 +93,10 @@ const AddInventory = () => {
         <div className="mb-2">
           <input
             className="p-2 border border-gray-300 rounded"
-            placeholder="Number"
+            placeholder="Quantity"
             type="text"
-            value={newMachineNumber}
-            onChange={(e) => setNewMachineNumber(e.target.value)}
+            value={newMachineQuantity}
+            onChange={(e) => setNewMachineQuantity(e.target.value)}
           />
         </div>
         {/* <div className="mb-2">

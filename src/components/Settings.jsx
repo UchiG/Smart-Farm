@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom"
 import Sidebar from "./Sidebar"
 
 const Settings = () => {
-  const location = useLocation()
+  const location = useLocation();
 
   return (
     <>

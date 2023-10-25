@@ -2,17 +2,16 @@ import { useState, useEffect } from "react";
 import { db, auth } from "../config/firebase";
 import { Auth } from "../components/auth";
 import Sidebar from "../components/Sidebar"
-
+import { useNavigate } from "react-router-dom"
 import {
   getDocs,
   collection,
   addDoc,
-  deleteDoc,
-  doc,
-  updateDoc,
 } from "firebase/firestore";
 
 const AddAnimal = () => {
+  const navigate = useNavigate();
+
   const [animalList, setAnimalList] = useState([]);
 
   const [newAnimalType, setNewAnimalType] = useState("");
@@ -60,21 +59,10 @@ const AddAnimal = () => {
       setNewAnimalSpecies("");
       setNewAnimalAge("");
       getAnimalList();
+      navigate("/animals")
     } catch (error) {
       console.error(error);
     }
-  }
-
-  const deleteAnimal = async (id) => {
-    const animalDoc = doc(db, "animals", id);
-    await deleteDoc(animalDoc);
-    getAnimalList();
-  }
-
-  const updateAnimalSpecies = async (id) => {
-    const animalDoc = doc(db, "animals", id);
-    await updateDoc(animalDoc, { species: updatedSpecies });
-    getAnimalList();
   }
 
   return (

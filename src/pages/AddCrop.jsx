@@ -2,17 +2,18 @@ import { useState, useEffect } from "react"
 import { db, auth } from "../config/firebase"
 import { Auth } from "../components/auth"
 import Sidebar from "../components/Sidebar"
+import { useNavigate } from "react-router-dom"
+
 
 import {
   getDocs,
   collection,
   addDoc,
-  deleteDoc,
-  doc,
-  updateDoc,
 } from "firebase/firestore"
 
 const AddCrop = () => {
+  const navigate = useNavigate();
+
   const [cropList, setCropList] = useState([])
 
   const [newCropType, setNewCropType] = useState("")
@@ -30,8 +31,6 @@ const AddCrop = () => {
   // const [newPestControl, setNewPestControl] = useState("")
   // const [newActualHarvestDate, setNewActualHarvestDate] = useState("")
   // const [newLastUpdate, setNewLastUpdate] = useState("")
-
-  const [updatedSize, setUpdatedSize] = useState("")
 
   const cropsCollectionRef = collection(db, "crops")
 
@@ -66,22 +65,12 @@ const AddCrop = () => {
       setNewCropNumber("")
       setNewCropSize("")
       getCropList()
+      navigate("/crops")
     } catch (error) {
       console.error(error)
     }
   }
 
-  const deleteCrop = async (id) => {
-    const cropDoc = doc(db, "crops", id)
-    await deleteDoc(cropDoc)
-    getCropList()
-  }
-
-  const updateCropSize = async (id) => {
-    const cropDoc = doc(db, "crops", id)
-    await updateDoc(cropDoc, { avgSize: updatedSize })
-    getCropList()
-  }
 
   return (
     <div className="flex">

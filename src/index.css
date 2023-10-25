@@ -111,3 +111,12 @@
 .socialIconImg {
   width: 100%;
 }
+
+/* Example styles */
+.bg-green-600 {
+  background-color: #00ff00 !important;
+}
+
+.text-black {
+  color: #000 !important;
+}
