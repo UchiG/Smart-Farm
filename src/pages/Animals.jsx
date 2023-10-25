@@ -127,12 +127,15 @@ const Animals = () => {
                   <th className="p-0.5 border border-gray-300 w-1/6">Color</th>
                   <th className="p-0.5 border border-gray-300 w-1/6">Breed</th>
                   <th className="p-0.5 border border-gray-300 w-1/6">
-                    Species
-                  </th>
+                    Species</th>
                   <th className="p-0.5 border border-gray-300 w-1/6">Age</th>
+                  <th className="p-0.5 border border-gray-300 w-1/6">Location</th>
+                  <th className="p-0.5 border border-gray-300 w-1/6">Gender</th>
+                  <th className="p-0.5 border border-gray-300 w-1/6">Vaccination</th>
+                  {/* <th className="p-0.5 border border-gray-300 w-1/6">Dob</th> */}
+                  <th className="p-0.5 border border-gray-300 w-1/6">Health</th>
                   <th className="p-0.5 border border-gray-300 w-1/6">
-                    Actions
-                  </th>
+                    Actions</th>
                   +
                 </tr>
               </thead>
@@ -153,6 +156,21 @@ const Animals = () => {
                     </td>
                     <td className="p-0.5 border border-gray-300">
                       {animal.age}
+                    </td>
+                    <td className="p-0.5 border border-gray-300">
+                      {animal.location}
+                    </td>
+                    <td className="p-0.5 border border-gray-300">
+                      {animal.gender}
+                    </td>
+                    <td className="p-0.5 border border-gray-300">
+                      {animal.vaxStatus}
+                    </td>
+                    {/* <td className="p-0.5 border border-gray-300">
+                      {animal.dob}
+                    </td> */}
+                    <td className="p-0.5 border border-gray-300">
+                      {animal.healthStatus}
                     </td>
                     <td className="p-0.5 border border-gray-300 flex space-x-2">
                       <div onClick={() => deleteAnimal(animal.id)}>

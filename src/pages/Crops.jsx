@@ -105,14 +105,19 @@ const Crops = () => {
             <table className="w-full border-collapse border border-gray-300">
               <thead>
                 <tr className="bg-gray-200">
-                  <th className="p-0.5 border border-gray-300 w-1/3">Type</th>
+                  <th className="p-0.5 border border-gray-300 w-1/3">Crop Variety</th>
                   <th className="p-0.5 border border-gray-300 w-1/3">Number</th>
-                  <th className="p-0.5 border border-gray-300 w-1/3">
-                    Average Size
-                  </th>
-                  <th className="p-0.5 border border-gray-300 w-1/3">
-                    Actions
-                  </th>
+                  <th className="p-0.5 border border-gray-300 w-1/3">Average Size</th>
+                  <th className="p-0.5 border border-gray-300 w-1/3">Batch ID</th>
+                  <th className="p-0.5 border border-gray-300 w-1/3">Area</th>
+                  <th className="p-0.5 border border-gray-300 w-1/3">Growth Stage</th>
+                  <th className="p-0.5 border border-gray-300 w-1/3">Planting Method</th>
+                  <th className="p-0.5 border border-gray-300 w-1/3">Soil Ph</th>
+                  <th className="p-0.5 border border-gray-300 w-1/3">Planting Date</th>
+                  <th className="p-0.5 border border-gray-300 w-1/3">Fertilization Date</th>
+                  <th className="p-0.5 border border-gray-300 w-1/3">Estimated Harvest Date</th>
+                  <th className="p-0.5 border border-gray-300 w-1/3">Last Update</th>
+                  
                 </tr>
               </thead>
               <tbody>
@@ -126,6 +131,33 @@ const Crops = () => {
                     </td>
                     <td className="p-0.5 border border-gray-300">
                       {crop.avgSize}
+                    </td>
+                    <td className="p-0.5 border border-gray-300">
+                      {crop.batchID}
+                    </td>
+                    <td className="p-0.5 border border-gray-300">
+                      {crop.area}
+                    </td>
+                    <td className="p-0.5 border border-gray-300">
+                      {crop.growthStage}
+                    </td>
+                    <td className="p-0.5 border border-gray-300">
+                      {crop.plantingMethod}
+                    </td>
+                    <td className="p-0.5 border border-gray-300">
+                      {crop.soilPh}
+                    </td>
+                    <td className="p-0.5 border border-gray-300">
+                      {crop.plantingDate}
+                    </td>
+                    <td className="p-0.5 border border-gray-300">
+                      {crop.fertilizationDate}
+                    </td>
+                    <td className="p-0.5 border border-gray-300">
+                      {crop.estHarvestDate}
+                    </td>
+                    <td className="p-0.5 border border-gray-300">
+                      {crop.lastUpdate}
                     </td>
                     <td className="p-0.5 border border-gray-300 flex space-x-2">
                       <div onClick={() => deleteCrop(crop.id)}>

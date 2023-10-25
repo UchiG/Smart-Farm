@@ -9,7 +9,7 @@ function Info() {
       <div className="logo">
         <img src={Logo} alt="Your Logo" width="500px" />
       </div>
-      <Settings /> 
+      {/* <Settings />  */}
       <div className="flex">
         <Sidebar />
         <div className="container mx-auto p-4">

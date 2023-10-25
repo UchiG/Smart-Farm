@@ -7,6 +7,11 @@ import LandingPage from "./pages/LandingPage"
 import Dashboard from "./pages/Dashboard"
 import Animals from "./pages/Animals"
 import Crops from "./pages/Crops"
+
+
+
+
+
 import Inventory from "./pages/Inventory"
 import Settings from "./components/Settings"
 import NewPassword from "./components/NewPassword"

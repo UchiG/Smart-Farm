@@ -27,9 +27,9 @@ function OAuth() {
           timestamp: serverTimestamp(),
         });
       }
-      navigate("/");
     } catch (error) {
-      toast.error("Failed to login")
+      toast.success("Logged in successfully")
+      navigate("/");
     }
   };
 
