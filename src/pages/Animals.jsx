@@ -13,6 +13,7 @@ import DeleteIcon from "../assets/svg/deleteIcon.svg?react"
 import EditIcon from "../assets/svg/editIcon.svg?react"
 import UpdateAnimalModal from "../components/UpdateAnimalModal" // Import the modal component
 import Logo from "../assets/svg/logo.svg"
+import { format } from "date-fns";
 
 const Animals = () => {
   const [animalList, setAnimalList] = useState([])
@@ -122,20 +123,18 @@ const Animals = () => {
           <div className="mt-2">
             <table className="w-full border-collapse border border-gray-300">
               <thead>
-                <tr className="bg-gray-200">
+                <tr className="bg-red-200">
                   <th className="p-0.5 border border-gray-300 w-1/6">Type</th>
                   <th className="p-0.5 border border-gray-300 w-1/6">Color</th>
                   <th className="p-0.5 border border-gray-300 w-1/6">Breed</th>
-                  <th className="p-0.5 border border-gray-300 w-1/6">
-                    Species</th>
+                  <th className="p-0.5 border border-gray-300 w-1/6">Species</th>
                   <th className="p-0.5 border border-gray-300 w-1/6">Age</th>
                   <th className="p-0.5 border border-gray-300 w-1/6">Location</th>
                   <th className="p-0.5 border border-gray-300 w-1/6">Gender</th>
                   <th className="p-0.5 border border-gray-300 w-1/6">Vaccination</th>
-                  {/* <th className="p-0.5 border border-gray-300 w-1/6">Dob</th> */}
                   <th className="p-0.5 border border-gray-300 w-1/6">Health</th>
-                  <th className="p-0.5 border border-gray-300 w-1/6">
-                    Actions</th>
+                  <th className="p-0.5 border border-gray-300 w-1/6">Dob</th>
+                  <th className="p-0.5 border border-gray-300 w-1/6">Actions</th>
                   +
                 </tr>
               </thead>
@@ -166,9 +165,9 @@ const Animals = () => {
                     <td className="p-0.5 border border-gray-300">
                       {animal.vaxStatus}
                     </td>
-                    {/* <td className="p-0.5 border border-gray-300">
-                      {animal.dob}
-                    </td> */}
+                    <td className="p-0.5 border border-gray-300">
+                      {animal.dob ? format(animal.dob.toDate(), "MM/dd/yyyy") : "N/A"}
+                    </td>
                     <td className="p-0.5 border border-gray-300">
                       {animal.healthStatus}
                     </td>

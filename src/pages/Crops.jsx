@@ -14,6 +14,7 @@ import {
 import DeleteIcon from "../assets/svg/deleteIcon.svg?react"
 import EditIcon from "../assets/svg/editIcon.svg?react"
 import Logo from "../assets/svg/logo.svg"
+import { format } from "date-fns";
 
 const Crops = () => {
   const [cropList, setCropList] = useState([])
@@ -104,7 +105,7 @@ const Crops = () => {
           <div className="mt-2">
             <table className="w-full border-collapse border border-gray-300">
               <thead>
-                <tr className="bg-gray-200">
+                <tr className="bg-green-200">
                   <th className="p-0.5 border border-gray-300 w-1/3">Crop Variety</th>
                   <th className="p-0.5 border border-gray-300 w-1/3">Number</th>
                   <th className="p-0.5 border border-gray-300 w-1/3">Average Size</th>
@@ -148,16 +149,16 @@ const Crops = () => {
                       {crop.soilPh}
                     </td>
                     <td className="p-0.5 border border-gray-300">
-                      {crop.plantingDate}
+                    {crop.plantingDate ? format(crop.plantingDate.toDate(), "MM/dd/yyyy") : "N/A"}
                     </td>
                     <td className="p-0.5 border border-gray-300">
-                      {crop.fertilizationDate}
+                    {crop.fertilizationDate ? format(crop.fertilizationDate.toDate(), "MM/dd/yyyy") : "N/A"}
                     </td>
                     <td className="p-0.5 border border-gray-300">
-                      {crop.estHarvestDate}
+                    {crop.estHarvestDate ? format(crop.estHarvestDate.toDate(), "MM/dd/yyyy") : "N/A"}
                     </td>
                     <td className="p-0.5 border border-gray-300">
-                      {crop.lastUpdate}
+                    {crop.lastUpdate ? format(crop.lastUpdate.toDate(), "MM/dd/yyyy") : "N/A"}
                     </td>
                     <td className="p-0.5 border border-gray-300 flex space-x-2">
                       <div onClick={() => deleteCrop(crop.id)}>

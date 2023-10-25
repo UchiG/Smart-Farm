@@ -13,6 +13,7 @@ import {
 import DeleteIcon from "../assets/svg/deleteIcon.svg?react"
 import EditIcon from "../assets/svg/editIcon.svg?react"
 import Logo from "../assets/svg/logo.svg"
+import { format } from "date-fns";
 
 const Inventory = () => {
   const [machineList, setMachineList] = useState([])
@@ -20,7 +21,7 @@ const Inventory = () => {
   const [newMachineType, setNewMachineType] = useState("")
   const [newMachineCost, setNewMachineCost] = useState("")
 
-  const [updatedNumber, setUpdatedNumber] = useState("")
+  const [updatedQuantity, setUpdatedQuantity] = useState("")
   const [updatedType, setUpdatedType] = useState("")
   const [updatedCost, setUpdatedCost] = useState("")
 
@@ -67,7 +68,7 @@ const Inventory = () => {
     await updateDoc(machineDoc, {
       machineType: updatedType,
       costPerMachine: updatedCost,
-      number: updatedNumber,
+      quantity: updatedQuantity,
     })
     getMachineList()
   }
@@ -102,27 +103,34 @@ const Inventory = () => {
           <div className="mt-2">
             <table className="w-full border-collapse border border-gray-300">
               <thead>
-                <tr className="bg-gray-200">
-                  <th className="p-0.5 border border-gray-300 w-1/3">Type</th>
-                  <th className="p-0.5 border border-gray-300 w-1/3">Cost</th>
-                  <th className="p-0.5 border border-gray-300 w-1/3">Number</th>
-                  <th className="p-0.5 border border-gray-300 w-1/3">
-                    Actions
-                  </th>
+                <tr className="bg-blue-200">
+                  {/* <th className="p-0.5 border border-gray-300 w-1/3">Item ID</th>  */}
+                  <th className="p-0.5 border border-gray-300 w-1/3">Type</th> 
+                  <th className="p-0.5 border border-gray-300 w-1/3">Purchase Cost</th> 
+                  <th className="p-0.5 border border-gray-300 w-1/3">Condition</th> 
+                  <th className="p-0.5 border border-gray-300 w-1/3">Quantity</th> 
+                  <th className="p-0.5 border border-gray-300 w-1/3">Purchase Date</th> 
+                  <th className="p-0.5 border border-gray-300 w-1/3">Maintenance Schedule</th> 
+                  <th className="p-0.5 border border-gray-300 w-1/3">Last Maintenance Date</th> 
+                  <th className="p-0.5 border border-gray-300 w-1/3">Warranty End Date</th> 
+                  <th className="p-0.5 border border-gray-300 w-1/3">Last Update</th> 
+                  <th className="p-0.5 border border-gray-300 w-1/3">Actions</th> 
                 </tr>
               </thead>
               <tbody>
                 {machineList.map((machine) => (
                   <tr key={machine.id}>
-                    <td className="p-0.5 border border-gray-300">
-                      {machine.machineType}
-                    </td>
-                    <td className="p-0.5 border border-gray-300">
-                      {machine.costPerMachine}
-                    </td>
-                    <td className="p-0.5 border border-gray-300">
-                      {machine.number}
-                    </td>
+                    {/* <td className="p-0.5 border border-gray-300">{machine.itemID}</td>  */}
+                    <td className="p-0.5 border border-gray-300">{machine.machineType}</td> 
+                    <td className="p-0.5 border border-gray-300">{machine.costPerMachine}</td> 
+                    <td className="p-0.5 border border-gray-300">{machine.condition}</td> 
+                    <td className="p-0.5 border border-gray-300">{machine.quantity}</td>
+                    <td className="p-0.5 border border-gray-300">{machine.purchaseDate ? format(machine.purchaseDate.toDate(), "MM/dd/yyyy") : "N/A"}</td>
+                    <td className="p-0.5 border border-gray-300">{machine.maintenanceSchedule ? format(machine.maintenanceSchedule.toDate(), "MM/dd/yyyy") : "N/A"}</td>
+                    <td className="p-0.5 border border-gray-300">{machine.lastMaintenanceDate ? format(machine.lastMaintenanceDate.toDate(), "MM/dd/yyyy") : "N/A"}</td>
+                    <td className="p-0.5 border border-gray-300">{machine.warrantyEndDate ? format(machine.warrantyEndDate.toDate(), "MM/dd/yyyy") : "N/A"}</td>
+                    <td className="p-0.5 border border-gray-300">{machine.lastUpdate ? format(machine.lastUpdate.toDate(), "MM/dd/yyyy") : "N/A"}</td>
+                    
                     <td className="p-0.5 border border-gray-300 flex space-x-2">
                       <div onClick={() => deleteMachine(machine.id)}>
                         <DeleteIcon fill="#ffffff" width="20px" height="20px" />
@@ -142,8 +150,8 @@ const Inventory = () => {
                       />
                       <input
                         className="p-0.5 border border-gray-300 rounded"
-                        placeholder="New Number"
-                        onChange={(e) => setUpdatedNumber(e.target.value)}
+                        placeholder="New Quantity"
+                        onChange={(e) => setUpdatedQuantity(e.target.value)}
                       />
                     </td>
                   </tr>

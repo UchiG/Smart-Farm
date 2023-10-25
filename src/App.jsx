@@ -7,18 +7,12 @@ import LandingPage from "./pages/LandingPage"
 import Dashboard from "./pages/Dashboard"
 import Animals from "./pages/Animals"
 import Crops from "./pages/Crops"
-
-
-
-
-
 import Inventory from "./pages/Inventory"
 import Settings from "./components/Settings"
 import NewPassword from "./components/NewPassword"
 import Profile from "./components/Profile"
 import Team from "./components/Team"
 import Info from "./components/Info"
-
 import SearchBar from "./components/SearchBar"
 import Welcome from "./pages/Welcome"
 import SignIn from "./pages/SignIn"
@@ -44,7 +38,6 @@ function App() {
       {/* <Router> */}
       <Routes>
         <Route path="/" element={<Dashboard />} />
-
         <Route path="/home" element={<LandingPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/animals" element={<Animals />} />
@@ -65,7 +58,6 @@ function App() {
         <Route path="/settings/new-password" element={<NewPassword />} />
         <Route path="/settings/team" element={<Team />} />
         <Route path="/settings/info" element={<Info />} />
-
         <Route path="/forgot-password" element={<ForgotPassword />} />
 
         {/* <Route path='/profile' element={<PrivateRoute />} >
