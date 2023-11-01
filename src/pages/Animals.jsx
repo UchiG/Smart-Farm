@@ -9,11 +9,14 @@ import {
   updateDoc,
 } from "firebase/firestore"
 import Sidebar from "../components/Sidebar"
+import ExtLinkIcon from "../assets/svg/extLinkIcon.svg?react"
 import DeleteIcon from "../assets/svg/deleteIcon.svg?react"
 import EditIcon from "../assets/svg/editIcon.svg?react"
 import UpdateAnimalModal from "../components/UpdateAnimalModal" // Import the modal component
 import Logo from "../assets/svg/logo.svg"
 import { format } from "date-fns";
+import { Link } from "react-router-dom"
+
 
 const Animals = () => {
   const [animalList, setAnimalList] = useState([])
@@ -119,6 +122,9 @@ const Animals = () => {
             >
               Add Animal
             </button>
+            <Link to='/add-animal'>
+              <ExtLinkIcon fill="#ffffff" width={20} height={20} />
+            </Link>
           </div>
           <div className="mt-2">
             <table className="w-full border-collapse border border-gray-300">
@@ -183,7 +189,7 @@ const Animals = () => {
                       >
                         <EditIcon fill="#ffffff" width="20px" height="20px" />
                       </div>
-                      <input
+                      {/* <input
                         className="p-0.5 border border-gray-300 rounded"
                         placeholder="New Type"
                         onChange={(e) => setUpdatedType(e.target.value)}
@@ -207,7 +213,7 @@ const Animals = () => {
                         className="p-0.5 border border-gray-300 rounded"
                         placeholder="New Age"
                         onChange={(e) => setUpdatedAge(e.target.value)}
-                      />
+                      /> */}
                     </td>
                   </tr>
                 ))}

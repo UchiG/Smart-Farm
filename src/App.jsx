@@ -25,10 +25,22 @@ import UpdateInventory from "./pages/UpdateInventory"
 import ForgotPassword from "./pages/ForgotPassword"
 import "tailwindcss/tailwind.css"
 
+import "leaflet/dist/leaflet.css"
+import { MapContainer, TileLayer, Marker, Popup  } from "react-leaflet"
+// import {
+//     MapContainer,
+//     TileLayer,
+//     useMap,
+//   } from 'https://cdn.esm.sh/react-leaflet'
+import MarkerClusterGroup from "react-leaflet-cluster"
+
+import { Icon, divIcon, point } from "leaflet"
+
 function App() {
 
   return (
     <>
+    
         {/* <div className="logo">
           <img src={Logo} alt="Your Logo" width="500px" />
         </div> */}

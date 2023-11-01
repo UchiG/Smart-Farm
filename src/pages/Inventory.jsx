@@ -10,10 +10,13 @@ import {
   doc,
   updateDoc,
 } from "firebase/firestore"
+import ExtLinkIcon from "../assets/svg/extLinkIcon.svg?react"
 import DeleteIcon from "../assets/svg/deleteIcon.svg?react"
 import EditIcon from "../assets/svg/editIcon.svg?react"
 import Logo from "../assets/svg/logo.svg"
 import { format } from "date-fns";
+import { Link } from "react-router-dom"
+
 
 const Inventory = () => {
   const [machineList, setMachineList] = useState([])
@@ -99,6 +102,10 @@ const Inventory = () => {
             >
               Add Machine
             </button>
+            <Link to='/add-inventory'>
+              <ExtLinkIcon fill="#ffffff" width={20} height={20} />
+            </Link>
+            
           </div>
           <div className="mt-2">
             <table className="w-full border-collapse border border-gray-300">
@@ -138,7 +145,7 @@ const Inventory = () => {
                       <div onClick={(e) => updateMachine(machine.id)}>
                         <EditIcon fill="#ffffff" width="20px" height="20px" />
                       </div>
-                      <input
+                      {/* <input
                         className="p-0.5 border border-gray-300 rounded"
                         placeholder="New Type"
                         onChange={(e) => setUpdatedType(e.target.value)}
@@ -152,7 +159,7 @@ const Inventory = () => {
                         className="p-0.5 border border-gray-300 rounded"
                         placeholder="New Quantity"
                         onChange={(e) => setUpdatedQuantity(e.target.value)}
-                      />
+                      /> */}
                     </td>
                   </tr>
                 ))}
