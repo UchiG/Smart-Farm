@@ -183,8 +183,8 @@ code {
   font-family: 'Lato', sans-serif; }
 
 .daniel-szulc-weather-widget {
-  height: 520px;
-  width: 350px;
+  height: 360px;
+  width: 500px;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -543,4 +543,3 @@ code {
 
 .night-mode.weather-widget .weather-icon .drop-shape {
   background-color: #1e8cb4; }
-

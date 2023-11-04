@@ -38,19 +38,19 @@ const Stats = () => {
     <div className="grid grid-cols-2 gap-4">
       <div className="h-32 w-44 border border-gray-300 p-4 rounded-lg">
         <h3 className="text-lg font-semibold">Livestock count</h3>
-        <p>{livestockCount}</p>
+        <p className="text-3xl font-bold">{livestockCount}</p>
       </div>
       <div className="h-32 w-44 border border-gray-300 p-4 rounded-lg">
         <h3 className="text-lg font-semibold">Crop count</h3>
-        <p>{cropCount}</p>
+        <p className="text-3xl font-bold">{cropCount}</p>
       </div>
       <div className="h-32 w-44 border border-gray-300 p-4 rounded-lg mb-0.5">
         <h3 className="text-lg font-semibold">Inventory count</h3>
-        <p>{inventoryCount}</p>
+        <p className="text-3xl font-bold">{inventoryCount}</p>
       </div>
       <div className="h-32 w-44 border border-gray-300 p-4 rounded-lg mt-0.5">
         <h3 className="text-lg font-semibold">User count</h3>
-        <p>{userCount}</p>
+        <p className="text-3xl font-bold">{userCount}</p>
       </div>
     </div>
   );

@@ -16,6 +16,7 @@ import EditIcon from "../assets/svg/editIcon.svg?react"
 import Logo from "../assets/svg/logo.svg"
 import { format } from "date-fns"
 import { Link } from "react-router-dom"
+import Weather from "../widgets/Weather"
 
 const Crops = () => {
   const [cropList, setCropList] = useState([])
@@ -83,6 +84,7 @@ const Crops = () => {
       </div>
       <div className="flex">
         <Sidebar />
+        <Weather />
         <div className="container mx-auto py-4">
           <div className="flex items-center space-x-4">
             <input

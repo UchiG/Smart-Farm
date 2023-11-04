@@ -66,7 +66,7 @@ const Users = () => {
           </span>
         </h1>
         <div className="mt-2">
-          <table className="w-full md:w-2/3 border-collapse border border-gray-300 table-space-left">
+          <table className="w-full border-collapse border border-gray-300 table-space-left">
             <thead>
               <tr className="bg-gray-200">
                 <th className="p-2 border border-gray-300">
