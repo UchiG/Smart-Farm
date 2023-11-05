@@ -543,3 +543,64 @@ code {
 
 .night-mode.weather-widget .weather-icon .drop-shape {
   background-color: #1e8cb4; }
+
+
+  .welcomeChild-1 .welcomeH1 {
+    color: #1E1E1E;
+
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+  }
+
+  .welcomeChild-1 .welcomeP {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    width: 600px;
+  }
+
+  .welcomeChild-2 {
+    border: 1px solid red;
+    display: flex;
+    justify-content:space-evenly;
+
+  }
+
+  .welcomeChild-2 .iconItems {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+
+  .welcomeChild-2 .icon1 {
+    background-image: url(./assets/svg/smileyOneIcon.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px;
+  }
+
+  .welcomeChild-2 .icon2 {
+    background-image: url(./assets/svg/smileyOneIcon.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+
+  .welcomeChild-2 .icon3 {
+    background-image: url(./assets/svg/smileyOneIcon.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px;
+  }
