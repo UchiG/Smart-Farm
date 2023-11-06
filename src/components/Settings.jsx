@@ -1,13 +1,15 @@
 import { Link, useLocation } from "react-router-dom"
 import Sidebar from "./Sidebar"
-import TopNavigation from "../components/TopNavigation";
+import Logo from "../assets/svg/logo.svg"
 
 const Settings = () => {
   const location = useLocation();
 
   return (
     <>
-      <TopNavigation />
+    {/* <div className="logo">
+        <img src={Logo} alt="Your Logo" width="500px" />
+      </div> */}
       <div className="flex">
         <Sidebar />
         <div className="container mx-auto py-4">

@@ -16,7 +16,6 @@ import EditIcon from "../assets/svg/editIcon.svg?react"
 import Logo from "../assets/svg/logo.svg"
 import { format } from "date-fns";
 import { Link } from "react-router-dom"
-import TopNavigation from "../components/TopNavigation";
 
 
 const Inventory = () => {
@@ -79,7 +78,9 @@ const Inventory = () => {
 
   return (
     <>
-      <TopNavigation />
+      <div className="logo">
+        <img src={Logo} alt="Your Logo" width="500px" />
+      </div>
       <div className="flex">
         <Sidebar />
         <div className="container mx-auto py-4">
