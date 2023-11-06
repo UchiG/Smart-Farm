@@ -543,3 +543,210 @@ code {
 
 .night-mode.weather-widget .weather-icon .drop-shape {
   background-color: #1e8cb4; }
+
+
+
+
+  .welcomeParent {
+    width: 1026px;
+    height: 145px;
+    flex-shrink: 0;
+  }
+  .welcomeChild-1 .welcomeH1 {
+    color: #1E1E1E;
+
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+  }
+
+  .welcomeChild-1 .welcomeP {
+    color: #000;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    width: 600px;
+  }
+
+  .welcomeChild-2 {
+    
+    display: flex;
+    justify-content:space-evenly;
+    height: 100px;
+    margin-top: 24px
+  }
+
+  .welcomeChild-2 .iconItems {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .welcomeChild-2 .icon1 {
+    background-image: url(./assets/svg/smileyOneIcon.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px;
+  }
+
+  .welcomeChild-2 .icon2 {
+    background-image: url(./assets/svg/smileyOneIcon.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+
+  .welcomeChild-2 .icon3 {
+    background-image: url(./assets/svg/smileyOneIcon.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px;
+  }
+
+  .iconItems .icon-text {
+    
+      margin-top: 30px; 
+       
+      color: #07802E;
+      font-family: Inter;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    
+  }
+
+  .welcomeGetStartedParent {
+    width: 1200px;
+    height: 600px;
+    flex-shrink: 0;
+    background-color: #07802E;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center;  */
+  }
+
+  /* .welcomeGetStaredChild {
+   
+  }  */
+
+  .welcomePageParent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  .welcomeGetStartedParent .getStartedFormParent {
+    
+    width: 350px;
+    height: 390px;
+    flex-shrink: 0;
+    margin-top: 55px;
+  }
+
+  .getStartedImage {
+    width: 400px;
+    height: 333.17px;
+    flex-shrink: 0;
+    background-image: url(./assets/svg/farmHorizonIcon.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px;
+    margin-top: 88px;
+    margin-left: 163px;
+  }
+
+  .getStartedFormParent .welcomeGetStartedInputField {
+    display: flex;
+    width: 350px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .welcomeGetStartedInputField .welcomeGetStartedInput {
+    border-radius: 8px;
+    border: 1px solid var(--gray-300, #D0D5DD);
+    background: var(--White, #FFF);
+
+    /* Shadow/xs */
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+    padding: 10px 14px;
+    width: 350px;
+  }
+
+  .welcomeGetStartedInputField .welcomeGetStartedInputLabe {
+    color: #FFF;
+
+/* Text sm/Medium */
+    font-family: Inter;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+    margin-bottom: 7px;
+  }
+
+  .getStartedForm {
+    display: flex;
+    flex-direction: column;
+  }
+
+   .welcomeGetStartedPageButton {
+    display: inline-flex;
+      width: 150px;
+      height: 44px;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+      border-radius: 5px;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      
+  }
+
+   .welcomeGetStartedPageButton-1 {
+    border: 2px solid #FFF;
+  background: rgba(242, 196, 7, 0.00);
+  }
+
+   .welcomeGetStartedPageButton-2 {
+    background: #F2C407;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px; /* Add 50px space between the buttons */
+  }
+
+  .getStartedUploadImage {
+    display: flex;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    justify-content: space-evenly;
+  }
+
+  .uploadImageItem-2 {
+    background-image: url(./assets/svg/uploadIcon.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px;
+  }
