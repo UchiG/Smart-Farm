@@ -13,9 +13,9 @@ import ExtLinkIcon from "../assets/svg/extLinkIcon.svg?react"
 import DeleteIcon from "../assets/svg/deleteIcon.svg?react"
 import EditIcon from "../assets/svg/editIcon.svg?react"
 import UpdateAnimalModal from "../components/UpdateAnimalModal" // Import the modal component
+import Logo from "../assets/svg/logo.svg"
 import { format } from "date-fns";
 import { Link } from "react-router-dom"
-import TopNavigation from "../components/TopNavigation";
 
 
 const Animals = () => {
@@ -92,7 +92,9 @@ const Animals = () => {
 
   return (
     <>
-      <TopNavigation />
+      <div className="logo">
+        <img src={Logo} alt="Your Logo" width="500px" />
+      </div>
       <div className="flex">
         <Sidebar />
         <div className="container mx-auto py-4">
@@ -170,8 +172,7 @@ const Animals = () => {
                       {animal.vaxStatus}
                     </td>
                     <td className="p-0.5 border border-gray-300">
-                    {animal.dob instanceof Date ? format(animal.dob, "MM/dd/yyyy") : "N/A"}
-
+                      {animal.dob ? format(animal.dob.toDate(), "MM/dd/yyyy") : "N/A"}
                     </td>
                     <td className="p-0.5 border border-gray-300">
                       {animal.healthStatus}

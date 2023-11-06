@@ -26,7 +26,7 @@ const Sidebar = () => {
   const defaultClass = "flex items-center space-x-2 rounded hover:bg-gray-700 p-2";
 
   return (
-    <div className="sidebar bg-black w-1/5 h-screen x text-white p-4 flex flex-col justify-between">
+    <div className="sidebar bg-black w-1/5 h-screen text-white p-4 flex flex-col justify-between">
       <ul>
         <li className="mb-4">
           <Link
