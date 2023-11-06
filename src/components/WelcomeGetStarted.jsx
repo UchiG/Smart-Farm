@@ -3,7 +3,7 @@ export const WelcomeGetStarted = () => {
     return (
             <div className="welcomeGetStartedParent">
                 <div className="welcomeGetStaredChild getStartedFormParent">
-                    <form action="">
+                    <form action="" className="getStartedForm">
                         <div className="welcomeGetStartedInputField">
                             <label htmlFor="farmName" className="welcomeGetStartedInputLabe">Farm Name</label>
                             <input type="text" className="welcomeGetStartedInput" />
@@ -24,9 +24,11 @@ export const WelcomeGetStarted = () => {
                             <label htmlFor="city" className="welcomeGetStartedInputLabe">City</label>
                             <input type="text"className="welcomeGetStartedInput"/>
                         </div>
+                        <button type="submit" className="welcomeGetStartedPageButton">Next</button>
                     </form>
                 </div>
                 <div className="welcomeGetStaredChild getStartedImage"></div>
+                
             </div>
     
     );
