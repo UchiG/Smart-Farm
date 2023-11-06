@@ -45,9 +45,6 @@ function Profile() {
 
   return (
     <>
-    <div className="logo">
-      <img src={Logo} alt="Your Logo" width="500px" />
-    </div>
     <Settings />
     <div className="flex">
       <Sidebar />
