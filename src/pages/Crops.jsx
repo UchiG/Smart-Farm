@@ -17,6 +17,7 @@ import Logo from "../assets/svg/logo.svg"
 import { format } from "date-fns"
 import { Link } from "react-router-dom"
 import Weather from "../widgets/Weather"
+import TopNavigation from "../components/TopNavigation";
 
 const Crops = () => {
   const [cropList, setCropList] = useState([])
@@ -79,12 +80,10 @@ const Crops = () => {
 
   return (
     <>
-      <div className="logo">
-        <img src={Logo} alt="Your Logo" width="500px" />
-      </div>
+      <TopNavigation />
       <div className="flex">
         <Sidebar />
-        <Weather />
+
         <div className="container mx-auto py-4">
           <div className="flex items-center space-x-4">
             <input
