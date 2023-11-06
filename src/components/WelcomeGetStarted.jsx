@@ -1,4 +1,4 @@
-export const WelcomeGetStarted = () => {
+export const WelcomeGetStarted = ({handleNext}) => {
 
     return (
             <div className="welcomeGetStartedParent">
@@ -24,7 +24,7 @@ export const WelcomeGetStarted = () => {
                             <label htmlFor="city" className="welcomeGetStartedInputLabe">City</label>
                             <input type="text"className="welcomeGetStartedInput"/>
                         </div>
-                        <button type="submit" className="welcomeGetStartedPageButton welcomeGetStartedPageButton-2">Next</button>
+                        <button type="submit" className="welcomeGetStartedPageButton welcomeGetStartedPageButton-2" onClick={() => handleNext()}>Next</button>
                     </form>
                 </div>
                 <div className="welcomeGetStaredChild getStartedImage"></div>

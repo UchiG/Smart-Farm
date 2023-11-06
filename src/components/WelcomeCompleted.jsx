@@ -1,4 +1,4 @@
-export const WelcomeCompleted = () => {
+export const WelcomeCompleted = ({handleBack}) => {
     
     return (
         <div className="welcomeGetStartedParent">
@@ -18,7 +18,7 @@ export const WelcomeCompleted = () => {
                    
                     
                     <div className="button-container">
-                        <button type="submit" className="welcomeGetStartedPageButton welcomeGetStartedPageButton-1">Back</button>
+                        <button type="submit" className="welcomeGetStartedPageButton welcomeGetStartedPageButton-1" onClick={() => handleBack()}>Back</button>
                         <button type="submit" className="welcomeGetStartedPageButton welcomeGetStartedPageButton-2">Next</button>
                     </div>
 

@@ -1,4 +1,4 @@
-export const WelcomeAlmostThere = () => {
+export const WelcomeAlmostThere = ({handleNext,handleBack}) => {
     return (
         <div className="welcomeGetStartedParent">
             <div className="welcomeGetStaredChild getStartedFormParent">
@@ -21,8 +21,8 @@ export const WelcomeAlmostThere = () => {
                     </div>
                     
                     <div className="button-container">
-                        <button type="submit" className="welcomeGetStartedPageButton welcomeGetStartedPageButton-1">Back</button>
-                        <button type="submit" className="welcomeGetStartedPageButton welcomeGetStartedPageButton-2">Next</button>
+                        <button type="submit" className="welcomeGetStartedPageButton welcomeGetStartedPageButton-1"  onClick={() => handleBack()}>Back</button>
+                        <button type="submit" className="welcomeGetStartedPageButton welcomeGetStartedPageButton-2"  onClick={() => handleNext()}>Next</button>
                     </div>
 
                 </form>
