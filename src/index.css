@@ -545,6 +545,13 @@ code {
   background-color: #1e8cb4; }
 
 
+
+
+  .welcomeParent {
+    width: 1026px;
+    height: 145px;
+    flex-shrink: 0;
+  }
   .welcomeChild-1 .welcomeH1 {
     color: #1E1E1E;
 
@@ -567,16 +574,21 @@ code {
   }
 
   .welcomeChild-2 {
-    border: 1px solid red;
+    
     display: flex;
     justify-content:space-evenly;
-
+    height: 100px;
+    margin-top: 24px
   }
 
   .welcomeChild-2 .iconItems {
     width: 24px;
     height: 24px;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .welcomeChild-2 .icon1 {
@@ -603,4 +615,60 @@ code {
     background-repeat: no-repeat;
     background-position: center center;
     padding: 20px;
+  }
+
+  .iconItems .icon-text {
+    
+      margin-top: 30px; 
+       
+      color: #07802E;
+      font-family: Inter;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    
+  }
+
+  .welcomeGetStartedParent {
+    width: 1200px;
+    height: 600px;
+    flex-shrink: 0;
+    background-color: #07802E;
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center;  */
+  }
+
+  .welcomeGetStaredChild {
+    border: 1px solid black;
+  } 
+
+  .welcomePageParent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  .welcomeGetStartedParent .getStartedFormParent {
+    border: 1px solid black;
+    width: 350px;
+    height: 390px;
+    flex-shrink: 0;
+    margin-top: 55px;
+  }
+
+  .getStartedImage {
+    width: 400px;
+    height: 333.17px;
+    flex-shrink: 0;
+    background-image: url(./assets/svg/farmHorizonIcon.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px;
+    margin-top: 88px;
+    margin-left: 163px;
   }
