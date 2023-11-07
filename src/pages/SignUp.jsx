@@ -58,7 +58,7 @@ function SignUp() {
     } catch (error) {
 
       console.log("Before navigate to /")
-      navigate("/")
+      navigate("/SignIn")
       console.log("After navigate to /")
       console.error(error)
 
