@@ -32,8 +32,13 @@ const Welcome = () => {
   })
 
   const [farmFormData, setFarmFormData] = useState({
-
-  })
+    farmName: '',
+    address: '',
+    country: '',
+    district: '',
+    city: '',
+  });
+  
  
   return (
    <div className="welcomePageParent">
