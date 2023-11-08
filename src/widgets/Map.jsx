@@ -17,17 +17,17 @@ export default function Map() {
 
         {/* First Marker */}
         <Marker position={[-22.595368, 27.114698]}>
-          <Popup>Praise God</Popup>
+          <Popup>Farm 1 West Plot</Popup>
         </Marker>
 
         {/* Second Marker */}
         <Marker position={[-22.595, 27.115]}>
-          <Popup>This is the second marker</Popup>
+          <Popup>Farm 1 East Plot</Popup>
         </Marker>
 
         {/* Third Marker */}
         <Marker position={[-22.590, 27.115]}>
-          <Popup>This is the third marker</Popup>
+          <Popup>Farm 1 North Plot</Popup>
         </Marker>
       </MapContainer>
     </div>

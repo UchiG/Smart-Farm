@@ -1,49 +1,42 @@
-import { useState } from "react"
-import { getAuth, updatePassword } from "firebase/auth"
-import Sidebar from "../components/Sidebar"
-import Logo from "../assets/svg/logo.svg"
-import Settings from "../components/Settings"
-
-
-
+import { useState } from "react";
+import { getAuth, updatePassword } from "firebase/auth";
+import Sidebar from "../components/Sidebar";
+import Logo from "../assets/svg/logo.svg";
+import Settings from "../components/Settings";
 
 const NewPassword = () => {
-  const [currentPassword, setCurrentPassword] = useState("")
-  const [newPassword, setNewPassword] = useState("")
-  const [confirmNewPassword, setConfirmNewPassword] = useState("")
-  const [errorMessage, setErrorMessage] = useState(null)
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmNewPassword, setConfirmNewPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState(null);
 
-  const auth = getAuth()
-  const user = auth.currentUser
+  const auth = getAuth();
+  const user = auth.currentUser;
 
   const handleUpdatePassword = async () => {
     if (newPassword !== confirmNewPassword) {
-      setErrorMessage("Passwords do not match.")
-      return
+      setErrorMessage("Passwords do not match.");
+      return;
     }
 
     try {
-      await updatePassword(user, newPassword)
+      await updatePassword(user, newPassword);
       // Password updated successfully
-      setErrorMessage(null)
+      setErrorMessage(null);
       // You can also show a success message here
     } catch (error) {
       // An error occurred while updating the password
-      setErrorMessage(error.message)
+      setErrorMessage(error.message);
     }
-  }
+  };
 
   return (
-    <>
-      <div className="logo">
-        <img src={Logo} alt="Your Logo" width="500px" />
-      </div>
-      <Settings />
-
     <div className="flex">
       <Sidebar />
-      
       <div className="container mx-auto py-4 ml-14">
+        <h1 className="text-3xl text-green text-center font-semibold mb-4">
+          Change your password
+        </h1>
         <div className="flex flex-col">
           <div className="mb-4">
             <label htmlFor="currentPassword" className="block text-lg mb-2">
@@ -96,8 +89,7 @@ const NewPassword = () => {
         </button>
       </div>
     </div>
-    </>
-  )
-}
+  );
+};
 
-export default NewPassword
+export default NewPassword;

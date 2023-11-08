@@ -87,7 +87,7 @@ const Crops = () => {
         <Weather />
         <div className="container mx-auto py-4">
           <div className="flex items-center space-x-4">
-            <input
+            {/* <input
               className="p-2 border border-gray-300 rounded"
               placeholder="Crop type"
               onChange={(e) => setNewCropType(e.target.value)}
@@ -97,15 +97,15 @@ const Crops = () => {
               placeholder="Number"
               type="text"
               onChange={(e) => setNewCropNumber(e.target.value)}
-            />
+            /> */}
+              <Link to='/add-crop'>
             <button
               className="p-2 bg-green-700 text-white rounded hover:bg-green-700"
               onClick={onSubmitCrop}
             >
-              Add Crop
+              + Add Crop
             </button>
-            <Link to='/add-crop'>
-              <ExtLinkIcon fill="#ffffff" width={20} height={20} />
+              {/* <ExtLinkIcon fill="#ffffff" width={20} height={20} /> */}
             </Link>
           </div>
           <div className="mt-2">

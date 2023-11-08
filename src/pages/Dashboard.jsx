@@ -18,12 +18,10 @@ const Dashboard = () => {
       <div className="container mx-auto p-4 flex-1">
         <div className="flex space-x-4">
           <Map />
-          <Weather />
-          <div className="w-1/4">
-          </div>
-          <div className="w-3/4">
+          {/* <Weather /> */}
+          
             <Stats />
-          </div>
+          
         </div>
             <Users />
       </div>

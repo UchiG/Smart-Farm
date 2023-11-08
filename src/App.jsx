@@ -23,10 +23,11 @@ import UpdateAnimal from "./pages/UpdateAnimal"
 import UpdateCrop from "./pages/UpdateCrop"
 import UpdateInventory from "./pages/UpdateInventory"
 import ForgotPassword from "./pages/ForgotPassword"
+import PrivateRoute from "./components/PrivateRoute"
 import "tailwindcss/tailwind.css"
 
 import "leaflet/dist/leaflet.css"
-import { MapContainer, TileLayer, Marker, Popup  } from "react-leaflet"
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet"
 // import {
 //     MapContainer,
 //     TileLayer,
@@ -37,19 +38,22 @@ import MarkerClusterGroup from "react-leaflet-cluster"
 import { Icon, divIcon, point } from "leaflet"
 
 function App() {
-
   return (
     <>
-    
-        {/* <div className="logo">
+      {/* <div className="logo">
           <img src={Logo} alt="Your Logo" width="500px" />
         </div> */}
 
       {/* <Router> */}
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        {/* <Route path="/" element={<PrivateRoute />}> */}
+          <Route path="/" element={<Dashboard />} />
+        {/* </Route> */}
+
         <Route path="/home" element={<LandingPage />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        {/* <Route path="/dashboard" element={<PrivateRoute />}> */}
+          <Route path="/dashboard" element={<Dashboard />} />
+        {/* </Route> */}
         <Route path="/animals" element={<Animals />} />
         <Route path="/policy" element={<Terms />} />
         <Route path="/crops" element={<Crops />} />

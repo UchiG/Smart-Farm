@@ -1,6 +1,6 @@
 import Users from "./Users"
 import Logo from "../assets/svg/logo.svg"
-import Settings from "./Settings"
+// import Settings from "./Settings"
 
 
 const Team = () => {
@@ -9,7 +9,7 @@ const Team = () => {
     <div className="logo">
       <img src={Logo} alt="Your Logo" width="500px" />
     </div>
-    <Settings />
+    {/* <Settings /> */}
     <div>
       <Users></Users>
     </div>

@@ -85,7 +85,7 @@ const Inventory = () => {
         <Sidebar />
         <div className="container mx-auto py-4">
           <div className="flex items-center space-x-4">
-            <input
+            {/* <input
               className="p-2 border border-gray-300 rounded"
               placeholder="Machine type"
               onChange={(e) => setNewMachineType(e.target.value)}
@@ -95,15 +95,17 @@ const Inventory = () => {
               placeholder="Cost"
               type="text"
               onChange={(e) => setNewMachineCost(e.target.value)}
-            />
+            /> */}
+              <Link to='/add-inventory'>
             <button
               className="p-2 bg-green-700 text-white rounded hover:bg-green-700"
-              onClick={onSubmitMachine}
+              onClick={() => {
+                // onSubmitMachine
+              }}
             >
-              Add Machine
+              + Add Machine
             </button>
-            <Link to='/add-inventory'>
-              <ExtLinkIcon fill="#ffffff" width={20} height={20} />
+              {/* <ExtLinkIcon fill="#ffffff" width={20} height={20} /> */}
             </Link>
             
           </div>

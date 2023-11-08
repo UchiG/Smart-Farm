@@ -116,7 +116,7 @@ const AddInventory = () => {
             <input
               className="p-2 border border-gray-300 rounded"
               placeholder="Last Maintenance Date" // Add lastMaintenanceDate
-              type="text"
+              type="date"
               value={newLastMaintenanceDate}
               onChange={(e) => setNewLastMaintenanceDate(e.target.value)}
             />
@@ -125,7 +125,7 @@ const AddInventory = () => {
             <input
               className="p-2 border border-gray-300 rounded"
               placeholder="Purchase Date" // Add purchaseDate
-              type="text"
+              type="date"
               value={newPurchaseDate}
               onChange={(e) => setNewPurchaseDate(e.target.value)}
             />
@@ -134,7 +134,7 @@ const AddInventory = () => {
             <input
               className="p-2 border border-gray-300 rounded"
               placeholder="Maintenance Schedule" // Add maintenanceSchedule
-              type="text"
+              type="date"
               value={newMaintenanceSchedule}
               onChange={(e) => setNewMaintenanceSchedule(e.target.value)}
             />
@@ -152,7 +152,7 @@ const AddInventory = () => {
             <input
               className="p-2 border border-gray-300 rounded"
               placeholder="Warranty End Date" // Add warrantyEndDate
-              type="text"
+              type="date"
               value={newWarrantyEndDate}
               onChange={(e) => setNewWarrantyEndDate(e.target.value)}
             />
@@ -161,7 +161,7 @@ const AddInventory = () => {
             className="p-2 bg-green-700 text-white rounded hover-bg-green-800"
             onClick={onSubmitMachine}
           >
-            Add Machine
+            + Add Machine
           </button>
         </div>
       </div>

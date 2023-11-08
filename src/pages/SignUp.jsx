@@ -13,6 +13,7 @@ import visibilityIcon from "../assets/svg/visibilityIcon.svg"
 
 function SignUp() {
   const [showPassword, setShowPassword] = useState(false)
+  const [confirmPassword, setConfirmPassword] = useState("")
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -33,6 +34,12 @@ function SignUp() {
   const onSubmit = async (e) => {
     e.preventDefault()
 
+    if (password !== confirmPassword) {
+      // Passwords do not match, show an error message or toast
+      toast.error("Passwords do not match")
+      return
+    }
+
     try {
       const auth = getAuth()
 
@@ -50,15 +57,15 @@ function SignUp() {
 
       const formDataCopy = { ...formData }
       delete formDataCopy.password
+      delete formDataCopy.confirmPassword // Remove confirm password before saving
       formDataCopy.timestamp = serverTimestamp()
 
       await setDoc(doc(db, "users", user.uid), formDataCopy)
 
       toast.error("Registered successfully!")
     } catch (error) {
-
       console.log("Before navigate to /")
-      navigate("/")
+      navigate("/sign-in")
       console.log("After navigate to /")
       console.error(error)
 
@@ -139,6 +146,23 @@ function SignUp() {
                 />
               </div>
             </div>
+            <label
+              htmlFor="confirmPassword"
+              className="text-sm text-left font-medium text-green-900 py-1"
+            >
+              Confirm Password
+            </label>
+            <input
+              type={showPassword ? "text" : "password"}
+              id="confirmPassword"
+              name="confirmPassword"
+              autoComplete="new-password"
+              required
+              className="appearance-none rounded-none relative block w-full px-3 py-2 border text-green-900 focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm"
+              placeholder=""
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
 
             <Link
               to="/forgot-password"
@@ -151,6 +175,11 @@ function SignUp() {
               acknowledge our privacy policy
             </h4>
 
+              {password !== confirmPassword && (
+                <div className="text-red-600 text-sm">
+                  Passwords do not match
+                </div>
+              )}
             <div className="flex justify-center">
               <button
                 type="submit"

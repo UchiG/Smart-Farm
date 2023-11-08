@@ -14,9 +14,8 @@ import DeleteIcon from "../assets/svg/deleteIcon.svg?react"
 import EditIcon from "../assets/svg/editIcon.svg?react"
 import UpdateAnimalModal from "../components/UpdateAnimalModal" // Import the modal component
 import Logo from "../assets/svg/logo.svg"
-import { format } from "date-fns";
+import { format } from "date-fns"
 import { Link } from "react-router-dom"
-
 
 const Animals = () => {
   const [animalList, setAnimalList] = useState([])
@@ -99,7 +98,7 @@ const Animals = () => {
         <Sidebar />
         <div className="container mx-auto py-4">
           <div className="flex items-center space-x-4">
-            <input
+            {/* <input
               className="p-2 border border-gray-300 rounded"
               value={newAnimalType}
               placeholder="Animal type"
@@ -111,19 +110,19 @@ const Animals = () => {
               value={newAnimalColor}
               placeholder="Color"
               onChange={(e) => setNewAnimalColor(e.target.value)}
-            />
+            /> */}
+              <Link to="/add-animal">
             <button
               className="p-2 bg-green-700 text-white rounded hover:bg-green-700"
               onClick={() => {
-                onSubmitAnimal()
-                setNewAnimalColor("")
-                setNewAnimalType("")
+                // onSubmitAnimal()
+                // setNewAnimalColor("")
+                // setNewAnimalType("")
               }}
             >
-              Add Animal
+              + Add Animal
             </button>
-            <Link to='/add-animal'>
-              <ExtLinkIcon fill="#ffffff" width={20} height={20} />
+              {/* <ExtLinkIcon fill="#ffffff" width={20} height={20} /> */}
             </Link>
           </div>
           <div className="mt-2">
@@ -133,14 +132,22 @@ const Animals = () => {
                   <th className="p-0.5 border border-gray-300 w-1/6">Type</th>
                   <th className="p-0.5 border border-gray-300 w-1/6">Color</th>
                   <th className="p-0.5 border border-gray-300 w-1/6">Breed</th>
-                  <th className="p-0.5 border border-gray-300 w-1/6">Species</th>
+                  <th className="p-0.5 border border-gray-300 w-1/6">
+                    Species
+                  </th>
                   <th className="p-0.5 border border-gray-300 w-1/6">Age</th>
-                  <th className="p-0.5 border border-gray-300 w-1/6">Location</th>
+                  <th className="p-0.5 border border-gray-300 w-1/6">
+                    Location
+                  </th>
                   <th className="p-0.5 border border-gray-300 w-1/6">Gender</th>
-                  <th className="p-0.5 border border-gray-300 w-1/6">Vaccination</th>
+                  {/* <th className="p-0.5 border border-gray-300 w-1/6">
+                    Vaccination
+                  </th> */}
                   <th className="p-0.5 border border-gray-300 w-1/6">Health</th>
                   <th className="p-0.5 border border-gray-300 w-1/6">Dob</th>
-                  <th className="p-0.5 border border-gray-300 w-1/6">Actions</th>
+                  <th className="p-0.5 border border-gray-300 w-1/6">
+                    Actions
+                  </th>
                   +
                 </tr>
               </thead>
@@ -168,14 +175,16 @@ const Animals = () => {
                     <td className="p-0.5 border border-gray-300">
                       {animal.gender}
                     </td>
-                    <td className="p-0.5 border border-gray-300">
+                    {/* <td className="p-0.5 border border-gray-300">
                       {animal.vaxStatus}
-                    </td>
-                    <td className="p-0.5 border border-gray-300">
-                      {animal.dob ? format(animal.dob.toDate(), "MM/dd/yyyy") : "N/A"}
-                    </td>
+                    </td> */}
                     <td className="p-0.5 border border-gray-300">
                       {animal.healthStatus}
+                    </td>
+                    <td className="p-0.5 border border-gray-300">
+                      {animal.dob instanceof Date
+                        ? format(animal.dob, "MM/dd/yyyy")
+                        : "N/A"}
                     </td>
                     <td className="p-0.5 border border-gray-300 flex space-x-2">
                       <div onClick={() => deleteAnimal(animal.id)}>
