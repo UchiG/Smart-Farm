@@ -221,7 +221,7 @@ const AddAnimal = () => {
               onChange={(e) => setNewAnimalHealthStatus(e.target.value)}
             />
           </div>
-          <div className="mb-2">
+          {/* <div className="mb-2">
             <input
               className="p-2 border border-gray-300 rounded"
               placeholder="Date of Birth"
@@ -229,7 +229,7 @@ const AddAnimal = () => {
               value={newAnimalDob}
               onChange={(e) => setNewAnimalDob(e.target.value)}
             />
-          </div>
+          </div> */}
           <button
             className="p-2 bg-green-700 text-white rounded hover-bg-green-800"
             onClick={onSubmitAnimal}

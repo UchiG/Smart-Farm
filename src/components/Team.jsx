@@ -1,5 +1,6 @@
 import Users from "./Users"
 import Logo from "../assets/svg/logo.svg"
+import BackButton from "./BackButton"
 // import Settings from "./Settings"
 
 
@@ -13,6 +14,7 @@ const Team = () => {
     <div>
       <Users></Users>
     </div>
+    <BackButton></BackButton>
     </>
   )
 }

@@ -154,7 +154,7 @@ const AddCrop = () => {
               onChange={(e) => setNewPlantingMethod(e.target.value)} // Set the state
             />
           </div>
-          <div className="mb-2">
+          {/* <div className="mb-2">
             <input
               className="p-2 border border-gray-300 rounded"
               placeholder="Planting Date" // Add plantingDate
@@ -162,8 +162,8 @@ const AddCrop = () => {
               value={newPlantingDate} // Use the state variable
               onChange={(e) => setNewPlantingDate(e.target.value)} // Set the state
             />
-          </div>
-          <div className="mb-2">
+          </div> */}
+          {/* <div className="mb-2">
             <input
               className="p-2 border border-gray-300 rounded"
               placeholder="Estimated Harvest Date" // Add estimatedHarvestDate
@@ -171,7 +171,7 @@ const AddCrop = () => {
               value={newEstimatedHarvestDate} // Use the state variable
               onChange={(e) => setNewEstimatedHarvestDate(e.target.value)} // Set the state
             />
-          </div>
+          </div> */}
           <div className="mb-2">
             <input
               className="p-2 border border-gray-300 rounded"
@@ -190,7 +190,7 @@ const AddCrop = () => {
               onChange={(e) => setNewStatus(e.target.value)} // Set the state
             />
           </div>
-          <div className="mb-2">
+          {/* <div className="mb-2">
             <input
               className="p-2 border border-gray-300 rounded"
               placeholder="Fertilization Date" // Add fertilizationDate
@@ -198,7 +198,7 @@ const AddCrop = () => {
               value={newFertilizationDate} // Use the state variable
               onChange={(e) => setNewFertilizationDate(e.target.value)} // Set the state
             />
-          </div>
+          </div> */}
           <div className="mb-2">
             <input
               className="p-2 border border-gray-300 rounded"
@@ -226,7 +226,7 @@ const AddCrop = () => {
               onChange={(e) => setNewPestControl(e.target.value)} // Set the state
             />
           </div>
-          <div className="mb-2">
+          {/* <div className="mb-2">
             <input
               className="p-2 border border-gray-300 rounded"
               placeholder="Actual Harvest Date" // Add actualHarvestDate
@@ -234,8 +234,8 @@ const AddCrop = () => {
               value={newActualHarvestDate} // Use the state variable
               onChange={(e) => setNewActualHarvestDate(e.target.value)} // Set the state
             />
-          </div>
-          <div className="mb-2">
+          </div> */}
+          {/* <div className="mb-2">
             <input
               className="p-2 border border-gray-300 rounded"
               placeholder="Last Update" // Add lastUpdate
@@ -243,7 +243,7 @@ const AddCrop = () => {
               value={newLastUpdate} // Use the state variable
               onChange={(e) => setNewLastUpdate(e.target.value)} // Set the state
             />
-          </div>
+          </div> */}
           <button
             className="p-2 bg-green-700 text-white rounded hover:bg-green-800"
             onClick={onSubmitCrop}

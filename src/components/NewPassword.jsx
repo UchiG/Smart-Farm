@@ -3,6 +3,8 @@ import { getAuth, updatePassword } from "firebase/auth";
 import Sidebar from "../components/Sidebar";
 import Logo from "../assets/svg/logo.svg";
 import Settings from "../components/Settings";
+import BackButton from "./BackButton"
+
 
 const NewPassword = () => {
   const [currentPassword, setCurrentPassword] = useState("");
@@ -33,6 +35,8 @@ const NewPassword = () => {
   return (
     <div className="flex">
       <Sidebar />
+    <BackButton></BackButton>
+
       <div className="container mx-auto py-4 ml-14">
         <h1 className="text-3xl text-green text-center font-semibold mb-4">
           Change your password

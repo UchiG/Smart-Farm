@@ -144,7 +144,7 @@ const Animals = () => {
                     Vaccination
                   </th> */}
                   <th className="p-0.5 border border-gray-300 w-1/6">Health</th>
-                  <th className="p-0.5 border border-gray-300 w-1/6">Dob</th>
+                  {/* <th className="p-0.5 border border-gray-300 w-1/6">Dob</th> */}
                   <th className="p-0.5 border border-gray-300 w-1/6">
                     Actions
                   </th>
@@ -181,11 +181,11 @@ const Animals = () => {
                     <td className="p-0.5 border border-gray-300">
                       {animal.healthStatus}
                     </td>
-                    <td className="p-0.5 border border-gray-300">
+                    {/* <td className="p-0.5 border border-gray-300">
                       {animal.dob instanceof Date
                         ? format(animal.dob, "MM/dd/yyyy")
                         : "N/A"}
-                    </td>
+                    </td> */}
                     <td className="p-0.5 border border-gray-300 flex space-x-2">
                       <div onClick={() => deleteAnimal(animal.id)}>
                         <DeleteIcon fill="#ffffff" width="20px" height="20px" />

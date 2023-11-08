@@ -18,8 +18,9 @@ function Info() {
       </div>
       <div className="flex">
         <Sidebar />
+
         <div className="container mx-auto p-4" style={centerStyle}>
-          <BackButton /> {/* Add the BackButton component here */}
+          <BackButton /> 
           <div className="bg-white p-4 shadow-lg rounded-lg">
             <h1 className="text-3xl font-semibold mb-4">User Info</h1>
             <div className="space-y-4">

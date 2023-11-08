@@ -1,51 +1,54 @@
-import { useState, useEffect } from "react";
-import { db } from "../config/firebase";
-import { getDocs, collection } from "firebase/firestore";
+import { useState, useEffect } from "react"
+import { db } from "../config/firebase"
+import { getDocs, collection } from "firebase/firestore"
 
 const Users = () => {
-  const [userList, setUserList] = useState([]);
-  const [selectedUsers, setSelectedUsers] = useState([]);
-  const [selectAll, setSelectAll] = useState(false);
-  const [userCount, setUserCount] = useState(0);
+  const [userList, setUserList] = useState([])
+  const [selectedUsers, setSelectedUsers] = useState([])
+  const [selectAll, setSelectAll] = useState(false)
+  const [userCount, setUserCount] = useState(0)
 
-  const usersCollectionRef = collection(db, "users");
+  const usersCollectionRef = collection(db, "users")
 
   const getUserList = async () => {
     try {
-      const data = await getDocs(usersCollectionRef);
+      const data = await getDocs(usersCollectionRef)
       const filteredData = data.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
         isSelected: false, // Add isSelected property to track selection
-      }));
-      setUserList(filteredData);
-      setUserCount(filteredData.length);
+      }))
+      setUserList(filteredData)
+      setUserCount(filteredData.length)
     } catch (err) {
-      console.error(err);
+      console.error(err)
     }
-  };
+  }
 
   useEffect(() => {
-    getUserList();
-  }, []);
+    getUserList()
+  }, [])
 
   // Function to toggle individual user selection
   const handleUserSelection = (userId) => {
     const updatedUsers = userList.map((user) =>
       user.id === userId ? { ...user, isSelected: !user.isSelected } : user
-    );
-    setUserList(updatedUsers);
-  };
+    )
+    setUserList(updatedUsers)
+  }
 
   // Function to toggle select all
   const handleSelectAll = () => {
-    setSelectAll(!selectAll);
-    const updatedUsers = userList.map((user) => ({ ...user, isSelected: !selectAll }));
-    setUserList(updatedUsers);
-  };
+    setSelectAll(!selectAll)
+    const updatedUsers = userList.map((user) => ({
+      ...user,
+      isSelected: !selectAll,
+    }))
+    setUserList(updatedUsers)
+  }
 
   // Determine whether to show "All Selected" or "Select All" based on user selections
-  const isAllSelected = userList.every((user) => user.isSelected);
+  const isAllSelected = userList.every((user) => user.isSelected)
 
   const getStatusCellStyle = (status) => {
     if (status === "active") {
@@ -81,6 +84,7 @@ const Users = () => {
                 <th className="p-2 border border-gray-300">Status</th>
                 <th className="p-2 border border-gray-300">Email</th>
                 <th className="p-2 border border-gray-300">Teams</th>
+                <th className="p-2 border border-gray-300">Actions</th>
               </tr>
             </thead>
             <tbody>
@@ -104,6 +108,11 @@ const Users = () => {
                   </td>
                   <td className="p-2 border border-gray-300">{user.Email}</td>
                   <td className="p-2 border border-gray-300">{user.Teams}</td>
+                  <td className="p-2 border border-gray-300">
+                    <div onClick={() => deleteUser(animal.id)}>
+                      <DeleteIcon fill="#ffffff" width="20px" height="20px" />
+                    </div>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -111,7 +120,7 @@ const Users = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Users;
+export default Users

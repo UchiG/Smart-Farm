@@ -132,7 +132,7 @@ const Crops = () => {
                   <th className="p-0.5 border border-gray-300 w-1/3">
                     Soil Ph
                   </th>
-                  <th className="p-0.5 border border-gray-300 w-1/3">
+                  {/* <th className="p-0.5 border border-gray-300 w-1/3">
                     Planting Date
                   </th>
                   <th className="p-0.5 border border-gray-300 w-1/3">
@@ -143,7 +143,7 @@ const Crops = () => {
                   </th>
                   <th className="p-0.5 border border-gray-300 w-1/3">
                     Last Update
-                  </th>
+                  </th> */}
                   <th className="p-0.5 border border-gray-300 w-1/3">
                     Actions
                   </th>
@@ -176,7 +176,7 @@ const Crops = () => {
                     <td className="p-0.5 border border-gray-300">
                       {crop.soilPh}
                     </td>
-                    <td className="p-0.5 border border-gray-300">
+                    {/* <td className="p-0.5 border border-gray-300">
                       {crop.plantingDate
                         ? format(crop.plantingDate.toDate(), "MM/dd/yyyy")
                         : "N/A"}
@@ -195,7 +195,7 @@ const Crops = () => {
                       {crop.lastUpdate
                         ? format(crop.lastUpdate.toDate(), "MM/dd/yyyy")
                         : "N/A"}
-                    </td>
+                    </td> */}
                     <td className="p-0.5 border border-gray-300 flex space-x-2">
                       <div onClick={() => deleteCrop(crop.id)}>
                         <DeleteIcon width={20} height={20} />

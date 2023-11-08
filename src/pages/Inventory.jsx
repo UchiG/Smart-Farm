@@ -118,11 +118,11 @@ const Inventory = () => {
                   <th className="p-0.5 border border-gray-300 w-1/3">Purchase Cost</th> 
                   <th className="p-0.5 border border-gray-300 w-1/3">Condition</th> 
                   <th className="p-0.5 border border-gray-300 w-1/3">Quantity</th> 
-                  <th className="p-0.5 border border-gray-300 w-1/3">Purchase Date</th> 
-                  <th className="p-0.5 border border-gray-300 w-1/3">Maintenance Schedule</th> 
-                  <th className="p-0.5 border border-gray-300 w-1/3">Last Maintenance Date</th> 
-                  <th className="p-0.5 border border-gray-300 w-1/3">Warranty End Date</th> 
-                  <th className="p-0.5 border border-gray-300 w-1/3">Last Update</th> 
+                  {/* <th className="p-0.5 border border-gray-300 w-1/3">Purchase Date</th>  */}
+                  {/* <th className="p-0.5 border border-gray-300 w-1/3">Maintenance Schedule</th>  */}
+                  {/* <th className="p-0.5 border border-gray-300 w-1/3">Last Maintenance Date</th>  */}
+                  {/* <th className="p-0.5 border border-gray-300 w-1/3">Warranty End Date</th>  */}
+                  {/* <th className="p-0.5 border border-gray-300 w-1/3">Last Update</th>  */}
                   <th className="p-0.5 border border-gray-300 w-1/3">Actions</th> 
                 </tr>
               </thead>
@@ -134,11 +134,11 @@ const Inventory = () => {
                     <td className="p-0.5 border border-gray-300">{machine.costPerMachine}</td> 
                     <td className="p-0.5 border border-gray-300">{machine.condition}</td> 
                     <td className="p-0.5 border border-gray-300">{machine.quantity}</td>
-                    <td className="p-0.5 border border-gray-300">{machine.purchaseDate ? format(machine.purchaseDate.toDate(), "MM/dd/yyyy") : "N/A"}</td>
-                    <td className="p-0.5 border border-gray-300">{machine.maintenanceSchedule ? format(machine.maintenanceSchedule.toDate(), "MM/dd/yyyy") : "N/A"}</td>
-                    <td className="p-0.5 border border-gray-300">{machine.lastMaintenanceDate ? format(machine.lastMaintenanceDate.toDate(), "MM/dd/yyyy") : "N/A"}</td>
-                    <td className="p-0.5 border border-gray-300">{machine.warrantyEndDate ? format(machine.warrantyEndDate.toDate(), "MM/dd/yyyy") : "N/A"}</td>
-                    <td className="p-0.5 border border-gray-300">{machine.lastUpdate ? format(machine.lastUpdate.toDate(), "MM/dd/yyyy") : "N/A"}</td>
+                    {/* <td className="p-0.5 border border-gray-300">{machine.purchaseDate ? format(machine.purchaseDate.toDate(), "MM/dd/yyyy") : "N/A"}</td> */}
+                    {/* <td className="p-0.5 border border-gray-300">{machine.maintenanceSchedule ? format(machine.maintenanceSchedule.toDate(), "MM/dd/yyyy") : "N/A"}</td> */}
+                    {/* <td className="p-0.5 border border-gray-300">{machine.lastMaintenanceDate ? format(machine.lastMaintenanceDate.toDate(), "MM/dd/yyyy") : "N/A"}</td> */}
+                    {/* <td className="p-0.5 border border-gray-300">{machine.warrantyEndDate ? format(machine.warrantyEndDate.toDate(), "MM/dd/yyyy") : "N/A"}</td> */}
+                    {/* <td className="p-0.5 border border-gray-300">{machine.lastUpdate ? format(machine.lastUpdate.toDate(), "MM/dd/yyyy") : "N/A"}</td> */}
                     
                     <td className="p-0.5 border border-gray-300 flex space-x-2">
                       <div onClick={() => deleteMachine(machine.id)}>

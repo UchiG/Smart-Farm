@@ -6,6 +6,8 @@ import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from "../config/firebase";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import BackButton from "./BackButton"
+
 
 
 function Profile() {
@@ -95,6 +97,8 @@ function Profile() {
       </div>
       <div className="flex">
         <Sidebar />
+    <BackButton></BackButton>
+
         <div className="container mx-auto p-4">
           <h1 className="text-2xl font-semibold mb-4">User Profile</h1>
           <form onSubmit={handleSubmit} className="space-y-4">
