@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import { db } from "../config/firebase"
 import { getDocs, collection } from "firebase/firestore"
+import DeleteIcon from "../assets/svg/deleteIcon.svg?react"
+
 
 const Users = () => {
   const [userList, setUserList] = useState([])
