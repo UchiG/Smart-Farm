@@ -27,13 +27,20 @@ const Welcome = () => {
     }
   }
   
+  const [userFormData, setUserFormData] = useState({
+
+  })
+
+  const [farmFormData, setFarmFormData] = useState({
+
+  })
  
   return (
    <div className="welcomePageParent">
     <WelcomeHeader />
-    {currentStep === 'getStarted' && <WelcomeGetStarted handleNext={handleNext} />}
-    {currentStep === 'almostThere' && <WelcomeAlmostThere handleNext={handleNext} handleBack={handleBack} />}
-    {currentStep === 'completed' && <WelcomeCompleted handleBack={handleBack} />}
+    {currentStep === 'getStarted' && <WelcomeGetStarted handleNext={handleNext}   setFarmFormData={setFarmFormData} />}
+    {currentStep === 'almostThere' && <WelcomeAlmostThere handleNext={handleNext} handleBack={handleBack} setUserFormData={setUserFormData} />}
+    {currentStep === 'completed' && <WelcomeCompleted handleBack={handleBack} setUserFormData={setUserFormData} />}
 
 
 

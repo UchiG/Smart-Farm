@@ -1,4 +1,4 @@
-export const WelcomeAlmostThere = ({handleNext,handleBack}) => {
+export const WelcomeAlmostThere = ({handleNext,handleBack,setUserFormData}) => {
     return (
         <div className="welcomeGetStartedParent">
             <div className="welcomeGetStaredChild getStartedFormParent">

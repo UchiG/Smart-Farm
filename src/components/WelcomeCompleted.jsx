@@ -1,4 +1,4 @@
-export const WelcomeCompleted = ({handleBack}) => {
+export const WelcomeCompleted = ({handleBack,setUserFormData}) => {
     
     return (
         <div className="welcomeGetStartedParent">
